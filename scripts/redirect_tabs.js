@@ -9,7 +9,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 		console.log("-looking at: " + s);
 		if (s === req) {
 			console.log("FOUND MATCH, WILL BLOCK");
-			chrome.tabs.update(tabId, {url: "chrome-extension://mbipjdgekkbkafemhejdbgaencplgmca/index.html"});
+			chrome.tabs.update(tabId, {url: "chrome-extension://gepnhdkidfnbkaeeaamifjeleeilldpc/index.html"});
 		}
 	});
 });

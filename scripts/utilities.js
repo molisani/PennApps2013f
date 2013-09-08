@@ -53,7 +53,11 @@ function getTimeLeft() {
 		console.log("rebuilding time left array");
 		chrome.storage.sync.get("time", function(callback){
 			console.log(callback.time);
-			timeLeft = callback.time;
+			if (callback.time === undefined){
+				timeLeft = [];
+			} else {
+				timeLeft = callback.time;
+			}
 		});
 		if (timeLeft === undefined) timeLeft = [];
 		timeChanged = false;
