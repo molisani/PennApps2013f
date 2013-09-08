@@ -1,7 +1,9 @@
 // Initializing the form field counter
 var counter = 1;
+
 // Autopopulating fields
 autopopulation();
+
 // Autopopulation of fields
 function autopopulation() {
   // Grabbing the tracked websites
@@ -24,11 +26,13 @@ function autopopulation() {
     }
   });
 }
+
 // Click handler to live check the Dom
 $('#submit').on('click', function(){
   chrome.storage.sync.clear();
   saveInfo();
 });
+
 // Save the info the user inputs on the site
 function saveInfo() {
   // Fill arrays with blocked websites & times
@@ -55,6 +59,7 @@ function saveInfo() {
     console.log(print);
     siteMatch.push(print);
   });
+
   // Saving to chrome sync
   if (siteMatch.length === times.length && siteMatch.length > 0) {
     chrome.storage.sync.set({"tracking": siteMatch, "time": times}, function() {});
@@ -82,18 +87,21 @@ function saveInfo() {
     });
   }
 }
+
 // Pull websites off of Chrome sync
 function pullOff() {
   chrome.storage.sync.get(["tracking", "time"],function(message){
       console.log(message.tracking + " : " + message.time);
   });
 }
+
 // Add form fields
 $("#add").click(function() {
   var field = "<div class=\"form-inline finalformentry\" style=\"margin-bottom: 5px;\"><div class=\"form-group website\"><input type=\"text\" class=\"form-control\" id=\"website" + counter + "\" placeholder=\"Website\" style=\"width: 290px; height: 50px; text-align: center;\"></div> <div class=\"form-group time\"><input type=\"text\" class=\"form-control\" id=\"time" + counter + "\" placeholder=\"Time\" style=\"width: 100px; height: 50px; text-align: center;\"></div></div>"
   counter++;
   $("#rightform").append(field);
 });
+
 // Remove form fields
 $("#minus").click(function() {
   var readAttr = $(".finalformentry input:last").attr("readonly");
