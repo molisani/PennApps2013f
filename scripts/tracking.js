@@ -21,7 +21,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	var pageTimeAllocation = timeLeft[index];
 	var timeElapsed = 0;
 
-	var timer = setInterval(check, 250);
+	var timer = setInterval(function(){check}, 250);
 
 	console.log("tracking page index: " + index);
 	console.log("tracking page time: " + pageTimeAllocation);
