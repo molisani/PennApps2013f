@@ -2,10 +2,12 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	if (tab.url.match(pattern) !== null) var url = tab.url.match(pattern)[0];
 
 	getTracked();
+	getTimeLeft();
 	var index = -1;
 	for (var i = 0; i < trackedSites.length; i++) {
 		if(trackedSites[i] === url) {
 			index = i;
+			console.log("TRACKING: " + url);
 		}
 	}
 
@@ -13,7 +15,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	if (trackedListening[index] || changeInfo.status === "loading") return;
 	trackedListening[index] = true;
 
-	console.log("TRACKING: " + url + ", page is " + changeInfo.status);
+	//console.log("TRACKING: " + url + ", page is " + changeInfo.status);
 
 	var time_SiteAllocation = timeLeft[index];
 	var time_Elapsed = 0;

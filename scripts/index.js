@@ -63,8 +63,8 @@ function saveInfo() {
   // Saving to chrome sync
   if (siteMatch.length === times.length && siteMatch.length > 0) {
     chrome.storage.sync.set({"tracking": siteMatch, "time": times}, function() {});
-    trackedChanged = true;
-    timeChanged = true;
+    getTracked();
+    getTimeLeft();
     // Changing the form after the sync
     if (counter == siteMatch.length) {
       // Adding an extra field
