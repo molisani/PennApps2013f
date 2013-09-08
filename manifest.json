@@ -1,11 +1,11 @@
 {
 "manifest_version": 2,
-"name": "paf13",
+"name": "PennApps2013f",
 "version": "1.0",
 
 
 //"default_locale": "en",
-"description": "DESCRIPTION GOES HERE",
+"description": "This will be our description.",
 //"icons": {...},
 
 "browser_action": {
@@ -26,9 +26,7 @@
 
 
 "background": {
-  "scripts": ["redirect_tabs.js", "utilities.js", "tracking.js"]
+  "scripts": ["scripts/redirect_tabs.js", "scripts/utilities.js", "scripts/tracking.js"]
   //"persistent": false
-	},
-
-"web_accessible_resources": ["newRedirect.js", "custom.js", "utilities.js", "custom.css", "formatFix.js", "index.js", "jquery-1.10.2.min.js", "monitor.js", "popup.js"]
+	}
 }
