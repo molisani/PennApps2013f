@@ -13,14 +13,12 @@ function autopopulation() {
     if (trackedSites.length > 0) {
       // Iterates through each field
       for (var i = 0; i < trackedSites.length; i++) {
-        var field = "<div class=\"form-inline finalformentry\" style=\"margin-bottom: 4px;\"><div class=\"form-group website\"><input type=\"text\" class=\"form-control\" id=\"website" + counter + "\" placeholder=\"Website\" style=\"width: 290px; height: 50px; text-align: center;\"></div> <div class=\"form-group time\"><input type=\"text\" class=\"form-control\" id=\"time" + counter + "\" placeholder=\"Time\" style=\"width: 100px; height: 50px; text-align: center;\"></div></div>"
+        var field = "<div class=\"form-inline finalformentry\" style=\"margin-bottom: 4px;\"><div class=\"form-group website\"><input type=\"text\" class=\"form-control\" id=\"website" + counter + "\" placeholder=\"Website\" style=\"width: 290px; height: 50px; text-align: center;\"></div></div>"
         counter++;
-        var urltext = "#rightform input:eq(" + 2 * i + ")";
-        var timetext = "#rightform input:eq(" + (2 * i + 1) + ")";
+        var urltext = "#rightform input:eq(" + i + ")";
         // Appending the filled forms
         $("#rightform").append(field);
         $(urltext).val(trackedSites[i]).attr('readonly', true);
-        $(timetext).val(times[i] / 60000).attr('readonly', true);
       }
     }
   });
