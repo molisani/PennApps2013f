@@ -7,7 +7,7 @@ This Chrome Extension allows users to block websites they frequent during certai
 
 ## Client-Side Interface
 
-TODO
+This Extension is built primarily around a form through which users can submit the websites they would like to track and block based off of their usage. This form communicates with our backend using Chrome's localStorage API. After users block sites they cannot edit any of the information involving that site, whether that be the URL or time alottment.
 
 ## License
 
